@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+    "name": "BaiduAdsBlocking",
+    "version": "2.0.0",
+    "description": "百度广告屏蔽",
+    "icons": {
+        "16":"icon.png",
+        "48":"icon.png"
+    },
+    "browser_action": {
+        "default_title": "百度广告屏蔽",
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://www.baidu.com/*",
+                "https://www.baidu.com/*"
+            ],
+            "js": [
+                "jquery-1.7.1.min.js",
+                "content.js"
+            ],
+            "run_at": "document_start"
+        }
+    ],
+    "permissions":[
+        "http://www.baidu.com/*",
+        "https://www.baidu.com/*"
+    ]
+}
